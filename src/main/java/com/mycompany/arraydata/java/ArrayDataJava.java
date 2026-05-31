@@ -174,6 +174,9 @@ public class ArrayDataJava {
                 default:
                     System.out.println("Invalid option. Try again.");
                     break;
+                    
+                    
+                    
             }
         }
     }
