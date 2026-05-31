@@ -148,11 +148,13 @@ public class ArrayDataJava {
                     if (!update){
                         System.out.println("User not register--");
                     }
-                 1
 
                     System.out.println("\nPress any key to back to main menu.");
                     key=data.nextLine();
                     break;
+                    
+                    
+                    
                     
                     
                 case 5:
@@ -160,6 +162,7 @@ public class ArrayDataJava {
                     System.out.println("\nPress any key to back to main menu.");
                     key=data.nextLine();
                     break;
+                    
                     
                     
                 case 6:
