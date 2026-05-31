@@ -45,8 +45,18 @@ public class ArrayDataJava {
                     System.out.println("::: REGISTER NEW USER :::");
                     System.out.println("\nUser Nro.: " + (firstNames.size()+1));   
             
-                    System.out.println("Identification number: ");   
-                    ident_number=data.nextLine();
+                    while (true){
+                        System.out.println("Digit your identification number: ");
+                        System.out.println("-Only numbers accepted-");
+                        ident_number = data.nextLine();
+                        //Aqui use matches para que verifique el patron de numeros
+                        if (ident_number.matches("[0-9]+")){
+                            break;
+                        }
+                        else{
+                            System.out.println("Error only numbers accepted!!");
+                        }
+                    }
                     System.out.println("First name: ");   
                     firstname=data.nextLine();
                     System.out.println("Last name: ");   
@@ -155,10 +165,50 @@ public class ArrayDataJava {
                     
                     
                     
-                    
-                    
+                  
                 case 5:
-                    System.out.println("Delete user");
+                    System.out.println("---DELETE USER----");
+                    System.out.println ("Enter idetification number");
+                    String deleteId =data.nextLine();
+                    boolean delete =false;
+                    
+                    for (int j = 0; j < identNumbers.size();j++){
+                        if (identNumbers.get(j).equals(deleteId)){
+                            System.out.println("The user is: " +
+                                    identNumbers.get(j)+" | " +
+                                    firstNames.get(j)+" | " +
+                                    lastNames.get(j)+" | " +
+                                    emails.get(j)+" | " +
+                                    ages.get(j));
+                            
+                            System.out.println("Are you sure you want to delete the user (Y/N)");
+                            String confirm =data.nextLine();
+                            
+                            if (confirm.equalsIgnoreCase("Y")){
+                            // con remove se elimina el usuario en j de todas las listas :v
+                            identNumbers.remove(j);
+                            firstNames.remove(j);
+                            lastNames.remove(j);
+                            emails.remove(j);
+                            ages.remove(j);
+                            
+                            System.out.println("The user is been removed from the data base");
+                            delete = true;
+                            }
+                            
+                            else{
+                                System.out.println("--Delete canceled--");
+                                delete=true;
+                            }
+                            
+                            break;   
+                        }
+                    }
+                        if (!delete){
+                        System.out.println("User doesnt exist!!");
+                            
+                        }
+                  
                     System.out.println("\nPress any key to back to main menu.");
                     key=data.nextLine();
                     break;
@@ -166,16 +216,18 @@ public class ArrayDataJava {
                     
                     
                 case 6:
+                    System.out.println("Are you sure you want exit?? (Y/N)");
+                    String confirm =data.nextLine();
+                    if (confirm.equalsIgnoreCase("Y")){
                     System.out.println("Bye, bye");
                     menu_status = false;
+                    }     
                     break;
                     
                     
                 default:
                     System.out.println("Invalid option. Try again.");
                     break;
-                    
-                    
                     
             }
         }
