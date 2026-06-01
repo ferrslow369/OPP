@@ -97,7 +97,7 @@ public class ArrayDataJava {
                     
                     
                 case 3:
-                    System.out.println("---Search user---");
+                    System.out.println("---SEARCH USER---");
                     System.out.println("Enter the identification number");
                     String searchId = data.nextLine();
                     Boolean find =false;
@@ -105,19 +105,20 @@ public class ArrayDataJava {
                     for (int j = 0; j < identNumbers.size();j++){
                         if (identNumbers.get(j).equals(searchId)){
                             System.out.println("User results: ");
-                            System.out.println("Identification number: " + identNumbers.get(j));
-                            System.out.println("First name: " + firstNames.get(j));
-                            System.out.println("Last name: " + lastNames.get(j));
-                            System.out.println("Email : " + emails.get(j));
-                            System.out.println("Age: " + ages.get(j));
-                            
+                            System.out.println(
+                             "| Id number: " + identNumbers.get(j)
+                             + " | First name: " + firstNames.get(j)
+                             + " | Last name: " + lastNames.get(j)
+                             + " | Email : " + emails.get(j)
+                             + " | Age: " + ages.get(j));
+                             
                             find = true;
                             break;
  
                         }
                     }
                     if (!find){
-                        System.out.println("User not founf!!!");
+                        System.out.println("User not found!!!");
                         
                     }
                      
@@ -143,7 +144,7 @@ public class ArrayDataJava {
                                     ages.get(j));
                             System.out.println("New first anme");
                             firstNames.set(j, data.nextLine());
-                            System.out.println("New last anme");
+                            System.out.println("New last name");
                             lastNames.set(j, data.nextLine());
                             System.out.println("New email");
                             emails.set(j, data.nextLine());
