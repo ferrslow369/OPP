@@ -32,10 +32,14 @@ public static int rollDices(){
        dice1= rollDices();
        dice2= rollDices();
         
-        System.out.println("Player name: "+ player_name);
+        System.out.println("Player name: " + player_name);
         System.out.println("Player lives: " + lives);
         System.out.println("Dice1: "+dice1);
         System.out.println("Dice2: "+dice2);
+        
+        if (dice1 + dice2 != %2);{
+        
+    }
        
        
        
