@@ -37,7 +37,7 @@ public static int rollDices(){
         System.out.println("Dice1: "+dice1);
         System.out.println("Dice2: "+dice2);
         
-        if (dice1 + dice2 != %2);{
+       
         
     }
        
